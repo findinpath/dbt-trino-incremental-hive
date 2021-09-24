@@ -1,0 +1,25 @@
+
+name: 'dbt_trino_incremental_hive'
+version: '1.0.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'trino-incremental-hive'
+
+source-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+data-paths: ["data"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+    - "target"
+    - "dbt_modules"
+    - "logs"
+
+models:
+  dbt_trino_incremental_hive:
+      materialized: table
+      staging:
+        materialized: table

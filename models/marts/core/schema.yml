@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: customer_insert_overwrite
+    description: This model tests `insert_overwrite` incremental strategy
+
+    columns:
+      - name: customer_id
+        description: This is a unique identifier for a customer
+        tests:
+          - unique
+          - not_null
+
+      - name: first_name
+        description: Customer's first name. PII.
+
+      - name: last_name
+        description: Customer's last name. PII.
+
+      - name: email
+        description: Customer's email address. PII.
+
+  - name: customer_append
+    description: This model tests `append` incremental strategy
+
+    columns:
+      - name: customer_id
+        description: This is a unique identifier for a customer
+        tests:
+          - unique
+          - not_null
+
+      - name: first_name
+        description: Customer's first name. PII.
+
+      - name: last_name
+        description: Customer's last name. PII.
+
+      - name: email
+        description: Customer's email address. PII.
